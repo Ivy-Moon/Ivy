@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小火箭效果</title>
+	<style type="text/css">
+		html{
+			height: 100%;
+		}
+		body{
+			/*padding: 0;
+			margin: 0;*/
+			height: 100%;
+			border:1px solid #0094ff;
+			background-color:orange;
+		}
+		.rocket{
+			width: 101px;
+			height: 190px;
+			background: url('img/rocket.png');
+			position: fixed;
+			bottom: -190px;
+			transition:all 6s ease-in-out;
+			/* translate 所使用的 中心点 */
+			transform-origin: center center;
+		}
+		body:hover .rocket{
+			transform:translate(1000px,-500px) rotate(360deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="rocket"></div>
+</body>
+</html>
