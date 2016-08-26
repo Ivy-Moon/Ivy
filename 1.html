@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+	/*想画一个半圆的话高度不能大于宽度的一半*/
+		.box{
+			width: 300px;
+			height: 620px;
+			/*background-color: purple;*/
+			margin: 50px auto;
+			position: relative;
+		}
+		.head{
+			width: 300px;
+			height: 150px;
+			background-color: green;
+			margin-bottom: 10px;
+			border-radius:150px 150px 0px 0px ; 
+			position: relative;
+			transition: all .5s;
+			top: 0;
+		}
+		.head:before,.head:after{
+			content: "";
+			width: 20px;
+			height: 20px;
+			background-color: orange;
+			display: block;
+			border-radius: 10px 10px 10px 10px ;
+		}
+		.head:before{
+			position: absolute;
+			top:70px;
+			left: 65px;
+			transition: all .5s;
+		}
+		.head:after{
+			position: absolute;
+			top:70px;
+			right: 65px;
+			transition: all .5s;
+		}
+		.box:hover .head{
+			top:-5px;
+		}
+		.box:hover .head:before{
+			background-color: yellow;
+		}
+		.box:hover .head:after{
+			background-color: yellow;
+		}
+/*-----------------------------------------------------------------*/
+		.body{
+			width: 300px;
+			height: 250px;
+			background-color: green;
+			position: relative;
+			border-radius:0 0 10px 10px;
+		}
+		
+		.body:before,.body:after{
+			width: 45px;
+			height: 150px;
+			background-color: green;
+			content: "";
+			display: block;
+			border-radius:20px 20px 20px 20px; 
+			transition: all .5s;
+		}
+		.body:before{
+			position: absolute;
+			top: 5px;
+			left: -65px;
+		}
+		.body:after{
+			position: absolute;
+			right: -65px;
+			top: 5px;
+		}
+		.box:hover .body:before{
+			transform: rotate(15deg);
+		}
+		.box:hover .body:after{
+			transform: rotate(-15deg);
+		}
+/*-------------------------------------------------------*/
+		.foot{
+			width: 300px;
+			height: 200px;
+			position: relative;
+
+		}
+		.foot:before,.foot:after{
+			width: 50px;
+			height: 100px;
+			background-color: green;
+			content: "";
+			display: block;
+			border-radius: 0px 0px 20px 20px;
+			transition: all .5s;
+		}
+		.foot:before{
+			position: absolute;
+			left: 45px;
+			top:0px;
+		}
+		.foot:after{
+			position: absolute;
+			right: 45px;
+			top:0px;
+		}
+		.box:hover .foot:before{
+			height: 120px;
+		}
+		.box:hover .foot:after{
+			height: 120px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="head"></div>
+		<div class="body"></div>
+		<div class="foot"></div>
+	</div>
+</body>
+</html>
