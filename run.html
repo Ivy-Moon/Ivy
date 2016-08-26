@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			perspective: 1000px;
+		}
+		.rotateBox{
+			width: 200px;
+			height: 200px;
+			border:1px solid #0094ff;
+			margin:50px auto;
+			position:relative;
+			text-align: center;
+			line-height: 200px;
+			font-size:50px;
+			transform-style: preserve-3d;
+			/*transform: rotateX(-15deg);*/
+			animation:rotatemove 5s linear infinite;
+		}
+		.rotateBox:hover{
+			animation-play-state:paused;
+		}
+		.rotateBox div{
+			width: 200px;
+			height: 200px;
+			background-color: yellowgreen;
+			position: absolute;
+			opacity: .5;
+			border:1px solid orange;
+		}
+		.item:nth-child(1){
+			transform: rotateY(0deg) translateZ(200px);
+		}
+		.item:nth-child(2){
+			transform: rotateY(60deg) translateZ(200px);
+		}
+		.item:nth-child(3){
+			transform: rotateY(120deg) translateZ(200px);
+		}
+		.item:nth-child(4){
+			transform: rotateY(180deg) translateZ(200px);
+		}
+		.item:nth-child(5){
+			transform: rotateY(240deg) translateZ(200px);
+		}
+		.item:nth-child(6){
+			transform: rotateY(300deg) translateZ(200px);
+		}
+		@keyframes rotatemove{
+			from{}
+			to{
+				transform: rotateY(360deg)  translateZ(1000px)  ;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="rotateBox">
+		<div class="item">item1</div>
+		<div class="item">item2</div>
+		<div class="item">item3</div>
+		<div class="item">item4</div>
+		<div class="item">item5</div>
+		<div class="item">item6</div>
+	
+	</div>
+</body>
+</html>
